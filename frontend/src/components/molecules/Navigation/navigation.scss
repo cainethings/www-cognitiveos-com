@@ -1,0 +1,32 @@
+.site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.site-nav__link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding: 0.15rem 0.35rem;
+}
+
+.site-nav__link.active {
+  text-decoration: underline;
+}
+
+.site-nav__link:focus-visible {
+  outline: 2px solid rgba(17, 24, 39, 0.35);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .site-nav__list {
+    gap: 1rem;
+  }
+}

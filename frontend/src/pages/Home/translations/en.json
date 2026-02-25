@@ -1,0 +1,157 @@
+{
+  "hero": {
+    "ariaLabel": "Homepage hero carousel",
+    "controls": {
+      "previous": "Previous slide",
+      "next": "Next slide",
+      "goTo": "Go to slide {number}"
+    },
+    "slides": {
+      "discover": {
+        "eyebrow": "Built for Indian markets",
+        "title": "Shop local. Ship faster.",
+        "subtitle": "Explore a city-first marketplace experience powered by reusable UI components.",
+        "bullets": {
+          "city": "Switch cities quickly with a clean selector",
+          "components": "Use atoms and molecules to build consistent pages",
+          "responsive": "Mobile-ready layouts from day one"
+        },
+        "primaryCta": "View UI demo",
+        "secondaryCta": "Open test page",
+        "mediaLabel": "Marketplace preview"
+      },
+      "build": {
+        "eyebrow": "Designed as building blocks",
+        "title": "Compose forms, navigation, and flows.",
+        "subtitle": "Build faster with a shared component library that stays readable and predictable.",
+        "bullets": {
+          "atoms": "Form atoms that cover common field types",
+          "accessible": "Keyboard-friendly interactions by default",
+          "fast": "Simple styling that is easy to extend"
+        },
+        "primaryCta": "Test form atoms",
+        "secondaryCta": "Sign in",
+        "mediaLabel": "Form and navigation"
+      },
+      "launch": {
+        "eyebrow": "Launch-ready essentials",
+        "title": "Policies, pages, and routing included.",
+        "subtitle": "Keep the experience consistent while you add the rest of the product surface.",
+        "bullets": {
+          "layout": "Primary layout with header + footer",
+          "policies": "Terms and privacy pages linked from the footer",
+          "routes": "Starter routes for auth and account"
+        },
+        "primaryCta": "View terms",
+        "secondaryCta": "View privacy",
+        "mediaLabel": "Launch checklist"
+      }
+    }
+  },
+  "hello": "SwadesiConnection India Launch",
+  "intro": {
+    "subtitle": "Signals that emphasize reliable sourcing, delivery, and support."
+  },
+  "categories": {
+    "title": "Shop by category",
+    "subtitle": "A simple grid that can later be wired to real category data and routes.",
+    "items": {
+      "grocery": {
+        "title": "Groceries",
+        "description": "Staples, snacks, and daily essentials from local sellers.",
+        "cta": "Explore"
+      },
+      "handmade": {
+        "title": "Handmade",
+        "description": "Crafted goods that highlight regional artistry and skills.",
+        "cta": "Explore"
+      },
+      "wellness": {
+        "title": "Wellness",
+        "description": "Ayurveda and self-care essentials to keep things balanced.",
+        "cta": "Explore"
+      },
+      "fashion": {
+        "title": "Fashion",
+        "description": "Contemporary and traditional wear from trusted brands.",
+        "cta": "Explore"
+      },
+      "home": {
+        "title": "Home and decor",
+        "description": "Decor, utility items, and essentials for every room.",
+        "cta": "Explore"
+      },
+      "gifting": {
+        "title": "Gifting",
+        "description": "Curated picks for festivals, celebrations, and thoughtful surprises.",
+        "cta": "Explore"
+      }
+    }
+  },
+  "gallery": {
+    "title": "Image gallery",
+    "subtitle": "A static grid that can be wired to real category imagery later.",
+    "items": {
+      "spices": {
+        "title": "Regional spices",
+        "description": "Bold flavors sourced from small farms and co-ops.",
+        "tag": "Signature"
+      },
+      "textiles": {
+        "title": "Textiles and craft",
+        "description": "Handwoven fabrics, looms, and artisan finishes.",
+        "tag": "Heritage"
+      },
+      "snacks": {
+        "title": "Snacks and staples",
+        "description": "Daily essentials with a fresh, local spin.",
+        "tag": "Daily"
+      },
+      "wellness": {
+        "title": "Wellness picks",
+        "description": "Ayurvedic care and mindful essentials.",
+        "tag": "Wellness"
+      },
+      "homeware": {
+        "title": "Homeware",
+        "description": "Decor and utility pieces for every room.",
+        "tag": "Home"
+      },
+      "gifting": {
+        "title": "Gifting",
+        "description": "Curated bundles for celebrations and festivals.",
+        "tag": "Gifts"
+      }
+    }
+  },
+  "trust": {
+    "title": "Built on trust, measured every week",
+    "subtitle": "Early trust indicators and placeholders that can be wired to live metrics later.",
+    "items": {
+      "sourcing": {
+        "value": "150+",
+        "label": "Verified sourcing partners",
+        "description": "Onboarded vendors with documented origin checks.",
+        "tag": "Verified"
+      },
+      "delivery": {
+        "value": "98%",
+        "label": "On-time delivery rate",
+        "description": "Last-mile network optimized for urban routes.",
+        "tag": "Reliable"
+      },
+      "support": {
+        "value": "24/7",
+        "label": "Customer response coverage",
+        "description": "Always-on support for buyers and sellers.",
+        "tag": "Support"
+      },
+      "secure": {
+        "value": "100%",
+        "label": "Secure checkout flows",
+        "description": "Encrypted payment handoffs with audit logs.",
+        "tag": "Secure"
+      }
+    }
+  }
+}

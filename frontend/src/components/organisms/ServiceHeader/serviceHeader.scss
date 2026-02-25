@@ -1,0 +1,115 @@
+.service-header {
+  position: relative;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  padding: 2.5rem;
+  border-radius: 26px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, rgba(17, 94, 89, 0.08), rgba(255, 255, 255, 0.95)),
+    #ffffff;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.service-header::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(17, 94, 89, 0.18), transparent 70%);
+  opacity: 0.7;
+}
+
+.service-header__content {
+  position: relative;
+  display: grid;
+  gap: 0.9rem;
+  z-index: 1;
+}
+
+.service-header__title {
+  max-width: 20ch;
+}
+
+.service-header__subtitle {
+  color: rgba(17, 24, 39, 0.72);
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+.service-header__meta {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  z-index: 1;
+}
+
+.service-header__meta-card {
+  padding: 1.1rem 1.2rem;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.service-header__meta-card--price {
+  background: rgba(17, 24, 39, 0.92);
+  color: #ffffff;
+}
+
+.service-header__meta-card--price .service-header__meta-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.service-header__meta-label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(17, 24, 39, 0.6);
+}
+
+.service-header__price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.service-header__price-currency {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.service-header__price-amount {
+  font-size: 2.1rem;
+  font-weight: 700;
+}
+
+.service-header__price-period {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+@media (max-width: 960px) {
+  .service-header {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .service-header__title {
+    max-width: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .service-header {
+    padding: 1.75rem 1.5rem;
+  }
+}
+

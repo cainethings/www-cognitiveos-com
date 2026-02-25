@@ -1,0 +1,63 @@
+{
+  "service": {
+    "title": "Express sourcing for fast-growing cities",
+    "subtitle": "A launch-ready service header that highlights where the work happens and what it costs.",
+    "badge": "Service live",
+    "cityLabel": "City",
+    "cityName": "Mumbai",
+    "priceLabel": "Starting at",
+    "priceCurrency": "INR",
+    "priceAmount": "449",
+    "pricePeriod": "per shipment",
+    "priceFallback": "Price on request",
+    "cityFallback": "Select a city",
+    "availability": {
+      "available": "Available now",
+      "limited": "Limited availability",
+      "unavailable": "Unavailable",
+      "unknown": "Availability pending"
+    }
+  },
+  "serviceDescription": {
+    "title": "Service description",
+    "subtitle": "What is included, how long it takes, and what we need to start.",
+    "body": "We coordinate sourcing, vendor onboarding, and city-level rollout so teams can activate new markets without slowing down the product roadmap.",
+    "fallbackBody": "Detailed service information will be shown here once a service is selected.",
+    "requirementsTitle": "Requirements",
+    "requirements": {
+      "items": {
+        "kit": "Product list with target volumes and pricing.",
+        "packaging": "Packaging guidelines or brand standards.",
+        "locations": "Warehouse or pickup locations for the city.",
+        "schedule": "Launch timeline and weekly shipment cadence."
+      }
+    },
+    "durationLabel": "Typical duration",
+    "durationValue": "6-8 weeks",
+    "durationNote": "Includes onboarding, sampling, and verification checks."
+  },
+  "notice": {
+    "title": "Notice period required",
+    "description": "Please give us enough time to allocate sourcing partners and reserve logistics capacity.",
+    "periodLabel": "Notice window",
+    "periodValue": "7 days",
+    "note": "Faster turnaround may affect availability.",
+    "actionLabel": "Check availability"
+  },
+  "status": {
+    "loading": "Loading service details",
+    "loadingHint": "Fetching the latest pricing and availability.",
+    "empty": "No services matched",
+    "emptyHint": "Try a different city or category filter.",
+    "error": "Unable to load services"
+  },
+  "booking": {
+    "title": "Ready to book the sourcing sprint?",
+    "subtitle": "Reserve your onboarding slot and confirm the weekly volume.",
+    "priceLabel": "Estimated start",
+    "priceCurrency": "INR",
+    "priceAmount": "449",
+    "pricePeriod": "per shipment",
+    "actionLabel": "Book now"
+  }
+}

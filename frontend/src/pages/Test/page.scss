@@ -1,0 +1,127 @@
+.test-page {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.test-page__hero {
+  text-align: center;
+}
+
+.test-page__eyebrow {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.35rem;
+}
+
+.test-page__title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin: 0;
+}
+
+.test-page__description {
+  margin-top: 0.5rem;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.test-page__panel {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.test-page__panel-heading h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.test-page__panel-subtitle {
+  margin-top: 0.35rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.test-page__component-list {
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.test-page__component-card {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px dashed rgba(0, 0, 0, 0.12);
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.test-page__component-heading {
+  font-weight: 600;
+  margin: 0;
+}
+
+.test-page__component-copy {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 0.95rem;
+}
+
+.test-page__selector-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.test-page__selector-note {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 0.9rem;
+}
+
+.test-page__selector-status {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.test-page__form-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.test-page__form-debug {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.test-page__form-debug-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.test-page__form-debug-code {
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  overflow: auto;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}

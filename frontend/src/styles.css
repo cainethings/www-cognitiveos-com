@@ -1,0 +1,138 @@
+:root {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #e7ecf3;
+  background: #0c1220;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(58, 123, 213, 0.25), transparent 45%),
+    radial-gradient(circle at 85% 20%, rgba(0, 210, 255, 0.16), transparent 42%),
+    #0c1220;
+}
+
+a {
+  color: inherit;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.app-shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.app-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  color: #9fb1c7;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+}
+
+.hero-card,
+.panel {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 14, 22, 0.72);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+}
+
+.hero-card {
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.hero-kicker {
+  margin: 0;
+  color: #8bd3ff;
+  font-size: 0.85rem;
+}
+
+.hero-card h2 {
+  margin: 0.35rem 0 0.4rem;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+}
+
+.hero-copy {
+  margin: 0;
+  color: #c7d2e1;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.panel {
+  padding: 1rem;
+}
+
+.panel h2,
+.panel h3 {
+  margin-top: 0;
+}
+
+.panel ul,
+.panel ol {
+  margin: 0.5rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.status {
+  margin: 0;
+  border-radius: 10px;
+  padding: 0.75rem;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+
+.status.success {
+  background: rgba(57, 210, 120, 0.1);
+  border: 1px solid rgba(57, 210, 120, 0.24);
+}
+
+.status.error {
+  color: #ffc4c4;
+}

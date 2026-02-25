@@ -1,0 +1,9 @@
+{
+  "title": "Sign in",
+  "subtitle": "This is a UI-only flow for now. Hook it up to the API when ready.",
+  "emailLabel": "Email address",
+  "emailPlaceholder": "name@example.com",
+  "otpLabel": "One-time password",
+  "otpHint": "Enter the 6 digit code",
+  "submit": "Continue"
+}

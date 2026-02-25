@@ -1,0 +1,61 @@
+.city-selector {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.city-selector__title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.city-selector__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.city-selector__button {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  background: transparent;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.city-selector__button:hover {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.city-selector__button--active {
+  background: #111827;
+  color: #fff;
+  border-color: #111827;
+}
+
+.city-selector__status {
+  margin-top: 0.85rem;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.city-selector--compact {
+  padding: 0.85rem;
+  box-shadow: none;
+}
+
+.city-selector--compact .city-selector__buttons {
+  gap: 0.4rem;
+}
+
+.city-selector--compact .city-selector__button {
+  padding: 0.35rem 0.7rem;
+  font-size: 0.9rem;
+}

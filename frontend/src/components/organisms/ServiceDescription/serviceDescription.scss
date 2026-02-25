@@ -1,0 +1,115 @@
+.service-description {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 2rem;
+  padding: 2.25rem;
+  border-radius: 26px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(255, 255, 255, 0.95)),
+    #ffffff;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+}
+
+.service-description__content {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.service-description__header {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.service-description__subtitle {
+  color: rgba(17, 24, 39, 0.72);
+  line-height: 1.6;
+}
+
+.service-description__body {
+  color: rgba(17, 24, 39, 0.78);
+  line-height: 1.7;
+}
+
+.service-description__requirements {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border-radius: 18px;
+  border: 1px dashed rgba(17, 24, 39, 0.15);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.service-description__list {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.service-description__list-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.6rem;
+  align-items: start;
+  color: rgba(17, 24, 39, 0.75);
+}
+
+.service-description__list-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: rgba(15, 118, 110, 0.15);
+  color: #0f766e;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-description__aside {
+  display: flex;
+  align-items: flex-start;
+}
+
+.service-description__duration {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  background: rgba(17, 24, 39, 0.92);
+  color: #ffffff;
+  display: grid;
+  gap: 0.6rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
+.service-description__duration-label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.service-description__duration-value {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.service-description__duration-note {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+@media (max-width: 960px) {
+  .service-description {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .service-description {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .service-description__duration-value {
+    font-size: 2rem;
+  }
+}
+

@@ -1,0 +1,16 @@
+.service-detail-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+  padding-bottom: 4rem;
+}
+
+.service-detail-page__status {
+  padding: 1.5rem 1.75rem;
+  border-radius: 18px;
+  border: 1px dashed rgba(17, 24, 39, 0.18);
+  background: rgba(255, 255, 255, 0.8);
+  display: grid;
+  gap: 0.4rem;
+}

@@ -1,0 +1,23 @@
+{
+  "brand": "SwadesiConnection",
+  "tagline": "India launch",
+  "description": "A simple storefront experience for discovering and supporting local businesses.",
+  "exploreTitle": "Explore",
+  "legalTitle": "Legal",
+  "contactTitle": "Contact",
+  "links": {
+    "home": "Home",
+    "demo": "Demo",
+    "playground": "Playground",
+    "terms": "Terms",
+    "privacy": "Privacy"
+  },
+  "contact": {
+    "email": "support@swadesiconnection.in",
+    "phone": "+91 00000 00000",
+    "phoneRaw": "+910000000000",
+    "location": "India"
+  },
+  "copyright": "Copyright (c) {year} SwadesiConnection. All rights reserved.",
+  "disclaimer": "Disclaimer: This website is in beta. Content and features may change."
+}

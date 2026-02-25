@@ -1,0 +1,225 @@
+.hero-carousel {
+  --hero-accent: #f59e0b;
+  --hero-accent-soft: rgba(245, 158, 11, 0.18);
+  --hero-accent-faint: rgba(245, 158, 11, 0.03);
+  width: 100%;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.hero-carousel:focus-visible {
+  outline: 3px solid rgba(17, 24, 39, 0.3);
+  outline-offset: 4px;
+}
+
+.hero-carousel__viewport {
+  overflow: hidden;
+}
+
+.hero-carousel__track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.45s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-carousel__track {
+    transition: none;
+  }
+}
+
+.hero-carousel__slide {
+  min-width: 100%;
+  padding: 2.5rem;
+  background: linear-gradient(
+      135deg,
+      var(--hero-accent-soft),
+      var(--hero-accent-faint) 55%,
+      rgba(255, 255, 255, 1) 100%
+    ),
+    #ffffff;
+}
+
+.hero-carousel__slide-inner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2.25rem;
+  align-items: center;
+}
+
+.hero-carousel__content {
+  display: grid;
+  gap: 1rem;
+  max-width: 640px;
+}
+
+.hero-carousel__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(17, 24, 39, 0.7);
+}
+
+.hero-carousel__title {
+  max-width: 16ch;
+}
+
+.hero-carousel__subtitle {
+  color: rgba(17, 24, 39, 0.75);
+  line-height: 1.6;
+}
+
+.hero-carousel__bullets {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 0.25rem;
+}
+
+.hero-carousel__bullet {
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+  color: rgba(17, 24, 39, 0.78);
+}
+
+.hero-carousel__bullet-icon {
+  margin-top: 0.15rem;
+  color: var(--hero-accent);
+}
+
+.hero-carousel__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.hero-carousel__media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-carousel__media-placeholder {
+  position: relative;
+  width: min(420px, 100%);
+  aspect-ratio: 4 / 3;
+  border-radius: 22px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(
+    145deg,
+    rgba(17, 24, 39, 0.08),
+    rgba(17, 24, 39, 0.02)
+  );
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem;
+}
+
+.hero-carousel__media-glow {
+  position: absolute;
+  inset: -30%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--hero-accent-soft),
+    transparent 55%
+  );
+  filter: blur(18px);
+  opacity: 0.9;
+}
+
+.hero-carousel__media-card {
+  position: relative;
+  z-index: 1;
+  padding: 0.85rem 1rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  max-width: 85%;
+}
+
+.hero-carousel__media-label {
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: rgba(17, 24, 39, 0.85);
+}
+
+.hero-carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.hero-carousel__nav {
+  min-width: 86px;
+}
+
+.hero-carousel__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.hero-carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 24, 39, 0.25);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.hero-carousel__dot:hover {
+  transform: scale(1.15);
+  border-color: rgba(17, 24, 39, 0.4);
+}
+
+.hero-carousel__dot--active {
+  background: rgba(17, 24, 39, 0.85);
+  border-color: rgba(17, 24, 39, 0.85);
+}
+
+@media (max-width: 900px) {
+  .hero-carousel__slide {
+    padding: 2rem 1.75rem;
+  }
+
+  .hero-carousel__slide-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-carousel__title {
+    max-width: none;
+  }
+
+  .hero-carousel__media {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-carousel__slide {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .hero-carousel__controls {
+    padding: 0.85rem 1rem;
+  }
+
+  .hero-carousel__nav {
+    min-width: auto;
+  }
+}

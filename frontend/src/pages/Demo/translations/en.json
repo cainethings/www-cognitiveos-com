@@ -1,0 +1,30 @@
+{
+  "title": "Core UI Atoms",
+  "subtitle": "Demo page to review the base components used across the web app.",
+  "sections": {
+    "buttons": "Buttons",
+    "text": "Text & Headings",
+    "icons": "Icons",
+    "badges": "Badges",
+    "loader": "Loader"
+  },
+  "buttons": {
+    "primary": "Primary",
+    "secondary": "Secondary",
+    "ghost": "Ghost",
+    "disabled": "Disabled"
+  },
+  "text": {
+    "body": "This is the default body text style for primary content.",
+    "small": "Small supporting copy for hints or metadata."
+  },
+  "badges": {
+    "simple": "Simple badge",
+    "complex": "Complex badge",
+    "status": "Active",
+    "note": "Updated"
+  },
+  "loader": {
+    "label": "Loading data"
+  }
+}
