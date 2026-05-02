@@ -1,9 +1,9 @@
-# Cognitive OS Chat Starter Template
+# CognitiveOS
 
-Generic project starter with:
+Memory-aware personal AI assistant with:
 
-- `frontend/`: Vite + React starter app (React Router included)
-- `backend/`: minimal PHP JSON API starter with a lightweight router
+- `frontend/`: Vite + React product demo for chat, memory dashboard, and history
+- `backend/`: PHP JSON API for conversations, memory extraction, memory retrieval, and deletion
 
 ## Quick Start
 
@@ -15,11 +15,19 @@ From `backend/`:
 php -S localhost:8000 -t public
 ```
 
-Available starter endpoints:
+Available endpoints:
 
 - `GET /api/health`
-- `GET /api/info`
-- `POST /api/echo`
+- `POST /api/chat`
+- `GET /api/conversations?user_id=demo-user`
+- `GET /api/memories?user_id=demo-user`
+- `DELETE /api/memories/:id`
+
+Apply the SQL schema before running the full demo:
+
+- `001_create_conversations.sql`
+- `002_create_memory_events.sql`
+- `003_add_active_to_memory_events.sql`
 
 ### 2) Start the frontend
 
@@ -32,13 +40,10 @@ npm run dev
 
 The Vite dev server proxies `/api` requests to `http://localhost:8000`.
 
-## Template Cleanup Notes
+## Demo Flow
 
-- The previous app-specific pages/components are still present in `frontend/src/` for now, but the starter uses only the new generic app entry files.
-- `frontend/node_modules` and `frontend/dist` are local/generated and are ignored by `.gitignore`.
-
-## Next Steps
-
-- Replace starter routes in `frontend/src/App.jsx`
-- Add your domain models and API endpoints in `backend/src/Controllers`
-- Remove old app-specific files once you no longer need them
+1. Tell CognitiveOS a preference, goal, or commitment.
+2. Open the memory dashboard to see extracted memory events.
+3. Ask a follow-up question that depends on prior context.
+4. Show retrieved memories in the latest response.
+5. Delete a memory to demonstrate user control.

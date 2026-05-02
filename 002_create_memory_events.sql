@@ -6,10 +6,12 @@ CREATE TABLE IF NOT EXISTS memory_events (
     confidence FLOAT NOT NULL DEFAULT 0,
     embedding JSON NOT NULL,
     source_message_id INT UNSIGNED NULL,
+    active TINYINT(1) NOT NULL DEFAULT 1,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
     INDEX idx_memory_events_user_id (user_id),
     INDEX idx_memory_events_memory_type (memory_type),
+    INDEX idx_memory_events_active (active),
     INDEX idx_memory_events_created_at (created_at),
     INDEX idx_memory_events_user_created (user_id, created_at),
     INDEX idx_memory_events_source_message_id (source_message_id),
@@ -18,4 +20,3 @@ CREATE TABLE IF NOT EXISTS memory_events (
         ON DELETE SET NULL
         ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-

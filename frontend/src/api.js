@@ -41,3 +41,20 @@ export const apiRequest = async (path, { method = 'GET', body } = {}) => {
 };
 
 export const getHealth = async () => apiRequest('/health');
+
+export const sendChatMessage = async (body) => apiRequest('/chat', {
+  method: 'POST',
+  body,
+});
+
+export const getConversations = async (userId) =>
+  apiRequest(`/conversations?user_id=${encodeURIComponent(userId)}`);
+
+export const getMemories = async (userId) =>
+  apiRequest(`/memories?user_id=${encodeURIComponent(userId)}`);
+
+export const deleteMemory = async (memoryId, userId) =>
+  apiRequest(`/memories/${memoryId}`, {
+    method: 'DELETE',
+    body: { user_id: userId },
+  });
