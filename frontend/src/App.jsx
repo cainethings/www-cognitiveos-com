@@ -41,6 +41,55 @@ const DEMO_STEPS = [
   },
 ];
 
+function escapeHtml(value) {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
+function renderInlineMarkdown(text) {
+  return escapeHtml(text)
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/`(.+?)`/g, '<code>$1</code>');
+}
+
+function renderMarkdown(text) {
+  const normalized = text.replace(/\r\n/g, '\n').trim();
+  if (!normalized) return '';
+
+  const blocks = normalized.split(/\n\s*\n/);
+
+  return blocks
+    .map((block) => {
+      const lines = block.split('\n').map((line) => line.trim()).filter(Boolean);
+
+      if (lines.every((line) => /^\d+\.\s+/.test(line))) {
+        const items = lines
+          .map((line) => line.replace(/^\d+\.\s+/, ''))
+          .map((line) => `<li>${renderInlineMarkdown(line)}</li>`)
+          .join('');
+
+        return `<ol>${items}</ol>`;
+      }
+
+      if (lines.every((line) => /^[-*]\s+/.test(line))) {
+        const items = lines
+          .map((line) => line.replace(/^[-*]\s+/, ''))
+          .map((line) => `<li>${renderInlineMarkdown(line)}</li>`)
+          .join('');
+
+        return `<ul>${items}</ul>`;
+      }
+
+      return `<p>${lines.map(renderInlineMarkdown).join('<br />')}</p>`;
+    })
+    .join('');
+}
+
 function formatTypeLabel(type) {
   if (!type) return 'Memory';
   return type.charAt(0).toUpperCase() + type.slice(1);
@@ -79,6 +128,15 @@ function StatusPill({ health }) {
   }
 
   return <span className="status-pill status-pill--success">API status: healthy</span>;
+}
+
+function MessageBody({ message }) {
+  return (
+    <div
+      className="message__body markdown-content"
+      dangerouslySetInnerHTML={{ __html: renderMarkdown(message) }}
+    />
+  );
 }
 
 export default function App() {
@@ -400,7 +458,7 @@ export default function App() {
                       <span>{message.role === 'assistant' ? 'CognitiveOS' : 'User'}</span>
                       <time>{formatTimestamp(message.created_at)}</time>
                     </div>
-                    <p>{message.message}</p>
+                    <MessageBody message={message.message} />
                   </article>
                 ))}
               </div>
