@@ -14,6 +14,33 @@ const DEMO_PROMPTS = [
   'What do you remember about how I like to work and what I am trying to finish?',
 ];
 
+const DEMO_STEPS = [
+  {
+    id: 'profile',
+    label: 'Step 1',
+    title: 'Store a preference',
+    message: DEMO_PROMPTS[0],
+  },
+  {
+    id: 'goal',
+    label: 'Step 2',
+    title: 'Store a goal',
+    message: DEMO_PROMPTS[1],
+  },
+  {
+    id: 'commitment',
+    label: 'Step 3',
+    title: 'Store a commitment',
+    message: DEMO_PROMPTS[2],
+  },
+  {
+    id: 'recall',
+    label: 'Step 4',
+    title: 'Trigger recall',
+    message: DEMO_PROMPTS[3],
+  },
+];
+
 function formatTypeLabel(type) {
   if (!type) return 'Memory';
   return type.charAt(0).toUpperCase() + type.slice(1);
@@ -59,6 +86,7 @@ export default function App() {
   const [draft, setDraft] = useState(DEMO_PROMPTS[0]);
   const [health, setHealth] = useState({ loading: true, error: null });
   const [chatState, setChatState] = useState({ loading: false, error: null, lastMeta: null });
+  const [demoState, setDemoState] = useState({ running: false, activeStepId: null });
   const [messages, setMessages] = useState([]);
   const [memories, setMemories] = useState([]);
   const [historyLoading, setHistoryLoading] = useState(true);
@@ -137,6 +165,31 @@ export default function App() {
     setDraft(prompt);
   };
 
+  const submitMessage = async (message) => {
+    const trimmedMessage = message.trim();
+    if (!trimmedMessage) return null;
+
+    setChatState({ loading: true, error: null, lastMeta: null });
+
+    const data = await sendChatMessage({
+      user_id: userId,
+      message: trimmedMessage,
+    });
+
+    setDraft('');
+    await refreshData();
+    setChatState({
+      loading: false,
+      error: null,
+      lastMeta: {
+        retrievedMemories: data.retrieved_memories || [],
+        storedMemories: data.stored_memories || [],
+      },
+    });
+
+    return data;
+  };
+
   const refreshData = async () => {
     const [conversationData, memoryData] = await Promise.all([
       getConversations(userId),
@@ -153,26 +206,37 @@ export default function App() {
     const message = draft.trim();
     if (!message) return;
 
-    setChatState({ loading: true, error: null, lastMeta: null });
-
     try {
-      const data = await sendChatMessage({
-        user_id: userId,
-        message,
-      });
-
-      setDraft('');
-      await refreshData();
-      setChatState({
-        loading: false,
-        error: null,
-        lastMeta: {
-          retrievedMemories: data.retrieved_memories || [],
-          storedMemories: data.stored_memories || [],
-        },
-      });
+      await submitMessage(message);
     } catch (error) {
       setChatState({ loading: false, error: error.message, lastMeta: null });
+    }
+  };
+
+  const handleDemoStep = async (step) => {
+    setDemoState({ running: true, activeStepId: step.id });
+
+    try {
+      await submitMessage(step.message);
+    } catch (error) {
+      setChatState({ loading: false, error: error.message, lastMeta: null });
+    } finally {
+      setDemoState({ running: false, activeStepId: null });
+    }
+  };
+
+  const handleRunFullDemo = async () => {
+    setDemoState({ running: true, activeStepId: 'full-demo' });
+
+    try {
+      for (const step of DEMO_STEPS) {
+        setDemoState({ running: true, activeStepId: step.id });
+        await submitMessage(step.message);
+      }
+    } catch (error) {
+      setChatState({ loading: false, error: error.message, lastMeta: null });
+    } finally {
+      setDemoState({ running: false, activeStepId: null });
     }
   };
 
@@ -453,16 +517,41 @@ export default function App() {
             <div className="section-heading section-heading--tight">
               <div>
                 <p className="eyebrow">Demo Story</p>
-                <h3>How to present it</h3>
+                <h3>Trigger real memory messages</h3>
               </div>
             </div>
-            <ol className="demo-steps">
-              <li>Tell CognitiveOS a preference and a goal.</li>
-              <li>Show the memory dashboard updating with extracted items.</li>
-              <li>Ask a follow-up that depends on earlier context.</li>
-              <li>Point out the retrieved memories used in the latest response.</li>
-              <li>Delete one memory live to demonstrate user control.</li>
-            </ol>
+            <p className="demo-copy">
+              These controls send actual messages to <code>/api/chat</code>. Use them to
+              populate memory, trigger retrieval, and show the dashboard updating live.
+            </p>
+            <div className="demo-actions">
+              {DEMO_STEPS.map((step) => (
+                <button
+                  key={step.id}
+                  type="button"
+                  className={`demo-step-button${
+                    demoState.activeStepId === step.id ? ' demo-step-button--active' : ''
+                  }`}
+                  onClick={() => handleDemoStep(step)}
+                  disabled={chatState.loading || demoState.running}
+                >
+                  <span>{step.label}</span>
+                  <strong>{step.title}</strong>
+                </button>
+              ))}
+            </div>
+            <button
+              type="button"
+              className="button button--primary demo-run-button"
+              onClick={handleRunFullDemo}
+              disabled={chatState.loading || demoState.running}
+            >
+              {demoState.running && demoState.activeStepId === 'full-demo'
+                ? 'Starting demo...'
+                : demoState.running
+                  ? 'Running step...'
+                  : 'Run Full Memory Demo'}
+            </button>
           </div>
         </aside>
       </main>
